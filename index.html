@@ -14,7 +14,11 @@
     <title></title>
     <!--     <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
     <!--  -->
+
+    <!-- <script src="1.js"></script> -->
+
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+
     <script>
       function setThemeClass() {
         document.documentElement.className = Telegram.WebApp.colorScheme;
@@ -22,6 +26,7 @@
       Telegram.WebApp.onEvent("themeChanged", setThemeClass);
       setThemeClass();
     </script>
+
     <style>
       body {
         font-family: sans-serif;
@@ -40,7 +45,7 @@
       button {
         display: block;
         width: 100%;
-        font-size: 14px;
+        font-size: 16px;
         margin: 15px 0;
         padding: 12px 20px;
         border: none;
@@ -185,12 +190,16 @@
   <body>
     <section>
       <h1 id="greeting"></h1>
+      <h1 id="test222"></h1>
 
       <div id="buttons">
         <button onclick="webviewExpand();">Expand Webview</button>
+
         <small>(The window goes fullscreen)</small>
+
         <button onclick="toggleMainButton(this);">Hide Main Button</button>
         <small>(It hides/shows main button)</small>
+
         <button id="btnTime" onclick="sendTime(10);">Send time</button>
         <small
           >(The bot will recieve a message with filled
@@ -259,10 +268,10 @@
       const initData = Telegram.WebApp.initData || "";
       const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
-      document.querySelector(
-        "#greeting"
-      ).innerHTML = `Hi, ${initDataUnsafe.user.first_name}, 1234!`;
-      document.querySelector("#greeting").innerHTML = `Hi, 12345, ${version}`;
+      //   document.querySelector(
+      //     "#greeting"
+      //   ).innerHTML = `Hi, ${initDataUnsafe.user.username}, 123444444! \n ${initDataUnsafe.user.first_name} ${initDataUnsafe.user.id}`;
+
       document.querySelector("#initData").innerHTML = JSON.stringify(
         initData,
         null,
